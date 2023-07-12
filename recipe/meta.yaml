@@ -67,7 +67,7 @@ about:
   license_file: LICENSE
   summary: Parameter Estimation automator for gravitational wave analyses.
   description: |
-    Asimov is a python package designed to make organising and monitoring data analysis jobs easier.
+    Asimov is a python package designed to make organising and monitoring data analysis jobs easier. 
 
 extra:
   recipe-maintainers:
