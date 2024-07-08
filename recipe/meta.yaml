@@ -1,5 +1,5 @@
 {% set name = "asimov" %}
-{% set version = "0.5.6" %}
+{% set version = "0.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f08569ca3da55bc93344402dfb8125b022344b459dcee66e442d15801f01dd0f
+  sha256: cb3a13307431e88054e6857760b768c74984d275fe2c1adde5a98e3030f87792
 
 build:
   noarch: python
