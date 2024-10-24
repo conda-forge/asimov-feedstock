@@ -153,6 +153,3 @@ Feedstock Maintainers
 * [@duncanmmacleod](https://github.com/duncanmmacleod/)
 * [@transientlunatic](https://github.com/transientlunatic/)
 
-
-<!-- dummy commit to enable rerendering -->
-
