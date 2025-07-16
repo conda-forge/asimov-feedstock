@@ -1,5 +1,5 @@
 {% set name = "asimov" %}
-{% set version = "0.5.8" %}
+{% set version = "0.5.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 06d2cdc751fb7f5bec57dd144a04903ebb8c34a181153f9a80c61e26fee8c681
+  sha256: b7a42dd9ba4367b0aea50d6b9e88394d3865d54aea96ccf8938b6b8879ddfbf3
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - locutus=asimov.locutus:cli
