@@ -22,39 +22,42 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
-    - setuptools_scm
+    - setuptools >=61.0
+    - setuptools-scm >=3.4.3
+    - wheel
   run:
     - click
     - flask
     - git
     - gitpython
     - gwpy
-    - igwn-auth-utils
+    - igwn-auth-utils >=0.2.1
     - ligo-gracedb
     - liquidpy
-    - lscsoft-glue
+    - lscsoft-glue >=2.0.0
     - networkx
     - numpy
     - otter-report >=0.3.3
+    - pillow >=10.2.0
     - python >={{ python_min }}
     - python-gitlab
     - python-htcondor
     - pytz
     - pyyaml
     - requests
+    - setuptools
     - tinydb
 
 test:
   requires:
     - pip
-    - git
     - python {{ python_min }}
   imports:
     - asimov
   commands:
     # check requirements
     - python -m pip check
+    - python -m pip show asimov
     # check entry points
     - locutus --help
     - asimov --help
