@@ -1,5 +1,5 @@
 {% set name = "asimov" %}
-{% set version = "0.5.11" %}
+{% set version = "0.5.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b7a42dd9ba4367b0aea50d6b9e88394d3865d54aea96ccf8938b6b8879ddfbf3
+  sha256: 150bdb6fd22cbef31f032cbd64c702b3d3d525380c3fa6ba1670df6cbfc8a77c
 
 build:
   noarch: python
@@ -25,6 +25,7 @@ requirements:
     - setuptools
     - setuptools_scm
   run:
+    - setuptools <82  # asimov requires pkg_resources at runtime
     - click
     - flask
     - git
@@ -39,7 +40,7 @@ requirements:
     - otter-report >=0.3.3
     - python >={{ python_min }}
     - python-gitlab
-    - python-htcondor
+    - python-htcondor <25  # require the v1 python bindings
     - pytz
     - pyyaml
     - requests
