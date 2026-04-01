@@ -25,6 +25,7 @@ requirements:
     - setuptools
     - setuptools_scm
   run:
+    - setuptools <=82  # asimov requires pkg_resources at runtime
     - click
     - flask
     - git
