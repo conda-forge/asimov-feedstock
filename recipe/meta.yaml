@@ -40,7 +40,7 @@ requirements:
     - otter-report >=0.3.3
     - python >={{ python_min }}
     - python-gitlab
-    - python-htcondor
+    - python-htcondor <25  # require the v1 python bindings
     - pytz
     - pyyaml
     - requests
