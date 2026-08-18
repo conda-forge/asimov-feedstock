@@ -1,0 +1,81 @@
+schema_version: 1
+
+context:
+  version: "0.7.0"
+
+package:
+  name: asimov
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/a/asimov/asimov-${{ version }}.tar.gz
+  sha256: ed396529214e0db9665b63cf51445bbfa49c52d5e438f6387bc419431a3c5c85
+
+build:
+  number: 0
+  noarch: python
+  python:
+    entry_points:
+      - asimov = asimov.olivaw:olivaw
+      - locutus = asimov.locutus:cli
+      - olivaw = asimov.olivaw:olivaw
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+    - setuptools_scm
+  run:
+    - click
+    - flask
+    - git
+    - gitpython
+    - gwpy
+    - igwn-auth-utils
+    - ligo-gracedb
+    - liquidpy
+    - lscsoft-glue
+    - networkx
+    - numpy
+    - otter-report >=0.3.3
+    - python >=${{ python_min }}
+    - python-gitlab
+    - python-htcondor
+    - pytz
+    - pyyaml
+    - requests
+    - tinydb
+
+tests:
+  - python:
+      imports:
+        - asimov
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - git
+    script:
+      - locutus --help
+      - asimov --help
+      - olivaw --help
+
+about:
+  summary: Parameter Estimation automator for gravitational wave analyses.
+  description: |
+    Asimov is a python package designed to make organising and monitoring data analysis jobs easier.
+  homepage: https://asimov.docs.ligo.org/asimov/
+  repository: https://git.ligo.org/asimov/asimov.git
+  documentation: https://asimov.docs.ligo.org/asimov/
+  license: ISC
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - ColmTalbot
+    - duncanmmacleod
+    - transientlunatic
