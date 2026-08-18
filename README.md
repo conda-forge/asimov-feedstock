@@ -15,7 +15,6 @@ Documentation: https://asimov.docs.ligo.org/asimov/
 
 Asimov is a python package designed to make organising and monitoring data analysis jobs easier.
 
-
 Current build status
 ====================
 
