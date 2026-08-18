@@ -40,12 +40,15 @@ requirements:
     - networkx
     - numpy
     - otter-report >=0.3.3
+    - pillow >=10.2.0
+    - pydantic >=2.0.0
     - python >=${{ python_min }}
     - python-gitlab
     - python-htcondor
     - pytz
     - pyyaml
     - requests
+    - setuptools <82.0.0a0
     - tinydb
 
 tests:
