@@ -15,15 +15,15 @@ Documentation: https://asimov.docs.ligo.org/asimov/
 
 Asimov is a python package designed to make organising and monitoring data analysis jobs easier.
 
-
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=18833&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asimov-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/asimov-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/asimov-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -46,31 +46,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `asimov` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install asimov
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install asimov
 ```
 
-It is possible to list all of the versions of `asimov` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add asimov
+# for installing globally
+pixi global install asimov
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `asimov` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search asimov --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search asimov --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search asimov --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -82,6 +124,8 @@ mamba repoquery whoneeds asimov --channel conda-forge
 # List dependencies of `asimov`:
 mamba repoquery depends asimov --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -150,6 +194,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@ColmTalbot](https://github.com/ColmTalbot/)
 * [@duncanmmacleod](https://github.com/duncanmmacleod/)
 * [@transientlunatic](https://github.com/transientlunatic/)
 
