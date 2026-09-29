@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.7.0"
+  version: "0.7.1"
 
 package:
   name: asimov
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/asimov/asimov-${{ version }}.tar.gz
-  sha256: ed396529214e0db9665b63cf51445bbfa49c52d5e438f6387bc419431a3c5c85
+  sha256: 66afcbaff3cff2fda99e841c3be765c0aaa53b8238e7e212b3e6a95a96aa4ec6
 
 build:
   number: 0
