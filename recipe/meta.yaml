@@ -44,7 +44,8 @@ requirements:
     - pytz
     - pyyaml
     - requests
-    - setuptools
+    # otter-report imports pkg_resources, removed in setuptools 82
+    - setuptools <82
     - sqlalchemy >=2.0.0
     - tinydb
 
