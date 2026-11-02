@@ -1,5 +1,5 @@
 {% set name = "asimov" %}
-{% set version = "0.5.12" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 150bdb6fd22cbef31f032cbd64c702b3d3d525380c3fa6ba1670df6cbfc8a77c
+  sha256: cdc5f3448d2cdc54bbd6fd2164d8c36c98c49cf13f927a04fa196bf5ea7a0dc2
 
 build:
   noarch: python
@@ -25,24 +25,28 @@ requirements:
     - setuptools
     - setuptools_scm
   run:
+    - alembic >=1.13.0
     - click
+    - filelock >=3.13.0
     - flask
+    - flask-cors >=4.0.0
     - git
     - gitpython
-    - gwpy
-    - igwn-auth-utils
-    - ligo-gracedb
     - liquidpy
-    - lscsoft-glue
     - networkx
     - numpy
     - otter-report >=0.3.3
+    - pillow >=10.2.0
+    - pydantic >=2.0.0
     - python >={{ python_min }}
     - python-gitlab
     - python-htcondor
     - pytz
     - pyyaml
     - requests
+    # otter-report imports pkg_resources, removed in setuptools 82
+    - setuptools <82
+    - sqlalchemy >=2.0.0
     - tinydb
 
 test:
